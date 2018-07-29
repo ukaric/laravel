@@ -3,7 +3,10 @@ services:
 
   # The Application
   app:
-    image: kadza/laravel-app
+    build:
+      context: ./
+      dockerfile: app.prod.dockerfile
+    working_dir: /var/www
     working_dir: /var/www
     env_file: '.env'
     volumes:
